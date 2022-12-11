@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VG7-rh-mDX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pill Reminder-->
+        <scene sceneID="pqu-IA-wqt">
+            <objects>
+                <viewController id="fkW-nk-KPv" customClass="RemindersViewController" customModule="PillReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAG-iA-3U4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yOo-XU-nho">
+                                <rect key="frame" x="16" y="113" width="361" height="695"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ghn-Oc-TRG" userLabel="Placeholder">
+                                <rect key="frame" x="16" y="35" width="361" height="782"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FXa-4W-Ob6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yOo-XU-nho" firstAttribute="leading" secondItem="FXa-4W-Ob6" secondAttribute="leading" constant="16" id="01g-fq-pUG"/>
+                            <constraint firstItem="Ghn-Oc-TRG" firstAttribute="leading" secondItem="FXa-4W-Ob6" secondAttribute="leading" constant="16" id="OcS-Se-Ccu"/>
+                            <constraint firstItem="FXa-4W-Ob6" firstAttribute="bottom" secondItem="yOo-XU-nho" secondAttribute="bottom" constant="10" id="SFb-AZ-wck"/>
+                            <constraint firstItem="FXa-4W-Ob6" firstAttribute="trailing" secondItem="yOo-XU-nho" secondAttribute="trailing" constant="16" id="Twc-5x-N8b"/>
+                            <constraint firstItem="FXa-4W-Ob6" firstAttribute="trailing" secondItem="Ghn-Oc-TRG" secondAttribute="trailing" constant="16" id="ZXa-QU-OqR"/>
+                            <constraint firstItem="yOo-XU-nho" firstAttribute="top" secondItem="FXa-4W-Ob6" secondAttribute="top" constant="10" id="eRi-7q-Mmt"/>
+                            <constraint firstItem="Ghn-Oc-TRG" firstAttribute="centerY" secondItem="HAG-iA-3U4" secondAttribute="centerY" id="yUf-9z-tbP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pill Reminder" id="cFP-Bf-EuQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="gZq-9i-vkZ">
+                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                            <connections>
+                                <segue destination="gvW-xo-bBG" kind="show" id="PlN-zh-l0Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="placeholder" destination="Ghn-Oc-TRG" id="mfD-tn-GL9"/>
+                        <outlet property="tableView" destination="yOo-XU-nho" id="jVL-k1-SMo"/>
+                        <segue destination="gvW-xo-bBG" kind="show" identifier="goToReminderDetailsVC" id="MV7-eB-tb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqg-Xv-nDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="-35"/>
+        </scene>
+        <!--Save Reminder Controller-->
+        <scene sceneID="RG2-aR-b81">
+            <objects>
+                <viewController id="gvW-xo-bBG" customClass="SaveReminderController" customModule="PillReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yNV-cb-h8c">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-fY-Lay">
+                                <rect key="frame" x="16" y="113" width="361" height="317"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add pill name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-zw-eJF">
+                                        <rect key="frame" x="15" y="0.0" width="331" height="45"/>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3qi-na-LRh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kxd-Ct-iI9">
+                                        <rect key="frame" x="0.0" y="92" width="361" height="55"/>
+                                        <locale key="locale" localeIdentifier="en"/>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="114" translatesAutoresizingMaskIntoConstraints="NO" id="W31-ki-HVV">
+                                        <rect key="frame" x="81.666666666666686" y="194" width="198" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ay-b4-lal">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="31"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keo-42-wkv">
+                                                <rect key="frame" x="149" y="0.0" width="51" height="31"/>
+                                                <color key="onTintColor" systemColor="systemIndigoColor"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDK-u1-MBY">
+                                        <rect key="frame" x="114.66666666666667" y="272" width="131.66666666666663" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="1qz-DK-TjY"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add Reminder">
+                                            <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="gvW-xo-bBG" eventType="touchUpInside" id="lYJ-7O-Wsf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Tc-zw-eJF" secondAttribute="trailing" constant="15" id="YEc-lN-Cne"/>
+                                    <constraint firstItem="9Tc-zw-eJF" firstAttribute="leading" secondItem="JPZ-fY-Lay" secondAttribute="leading" constant="15" id="bsT-8b-JI5"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Tc-zw-eJF" secondAttribute="trailing" constant="15" id="d5A-Ii-Hda"/>
+                                    <constraint firstItem="9Tc-zw-eJF" firstAttribute="leading" secondItem="JPZ-fY-Lay" secondAttribute="leading" constant="15" id="oeP-U5-4bg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dt9-Am-sGV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dt9-Am-sGV" firstAttribute="trailing" secondItem="JPZ-fY-Lay" secondAttribute="trailing" constant="16" id="4vf-Ed-IBM"/>
+                            <constraint firstItem="JPZ-fY-Lay" firstAttribute="top" secondItem="dt9-Am-sGV" secondAttribute="top" constant="10" id="7vV-bJ-9Ka"/>
+                            <constraint firstItem="JPZ-fY-Lay" firstAttribute="leading" secondItem="dt9-Am-sGV" secondAttribute="leading" constant="16" id="Dsv-no-YrM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5bM-H0-TcE"/>
+                    <connections>
+                        <outlet property="pillNameTextField" destination="9Tc-zw-eJF" id="YgD-ML-0Wh"/>
+                        <outlet property="reminderDatePicker" destination="Kxd-Ct-iI9" id="B8l-QM-mfi"/>
+                        <outlet property="ringSwitch" destination="keo-42-wkv" id="zVm-7q-1bf"/>
+                        <outlet property="saveButton" destination="fDK-u1-MBY" id="RaM-2l-gRn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zex-w9-Ek0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2979.3893129770991" y="-35.211267605633807"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bas-DJ-z8c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VG7-rh-mDX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z19-YB-LzO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fkW-nk-KPv" kind="relationship" relationship="rootViewController" id="JOZ-Wv-Ae0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpL-KC-HaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1067.9389312977098" y="-35.211267605633807"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MV7-eB-tb1"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="placeholder" width="1105.0400390625" height="782.739990234375"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
