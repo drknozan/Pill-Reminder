@@ -85,5 +85,33 @@ extension RemindersViewController: UITableViewDataSource {
     }
 }
 
-
+extension RemindersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let reminder = reminders?[indexPath.row] {
+            selectedPillName = reminder.name
+            selectedRingInfo = reminder.ring
+            selectedReminderDate = reminder.reminderDate
+            selectedReminderRow = indexPath.row
+        }
+        performSegue(withIdentifier: "goToReminderDetailsVC", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let reminderToDelete = self.reminders?[indexPath.row] {
+                do {
+                    try self.realm.write {
+                        self.realm.delete(reminderToDelete)
+                        self.tableView.reloadData()
+                        if self.tableView.numberOfRows(inSection: 0) == 0 {
+                            placeholder.isHidden = false
+                        }
+                    }
+                } catch {
+                    print("Error")
+                }
+            }
+        }
+    }
+}
 
