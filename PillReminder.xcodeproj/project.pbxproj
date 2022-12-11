@@ -16,6 +16,7 @@
 		263277E5293C82110090B8A2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263277E3293C82110090B8A2 /* TableViewCell.swift */; };
 		263277E6293C82110090B8A2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 263277E4293C82110090B8A2 /* TableViewCell.xib */; };
 		263277EB293C85B60090B8A2 /* SaveReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263277EA293C85B60090B8A2 /* SaveReminderController.swift */; };
+		26EC719A29463D4000EC2F19 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC719929463D4000EC2F19 /* Reminder.swift */; };
 		2FA6C28AB0B01B950A99A242 /* Pods_PillReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62B3FDDDAA44829CB5F83ED /* Pods_PillReminder.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		263277E3293C82110090B8A2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		263277E4293C82110090B8A2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		263277EA293C85B60090B8A2 /* SaveReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveReminderController.swift; sourceTree = "<group>"; };
+		26EC719929463D4000EC2F19 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		4505D4D21B2984C5507E5F89 /* Pods-PillReminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillReminder.debug.xcconfig"; path = "Target Support Files/Pods-PillReminder/Pods-PillReminder.debug.xcconfig"; sourceTree = "<group>"; };
 		AE8BD0E7B0B1E1DEC44BE6CC /* Pods-PillReminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PillReminder.release.xcconfig"; path = "Target Support Files/Pods-PillReminder/Pods-PillReminder.release.xcconfig"; sourceTree = "<group>"; };
 		F62B3FDDDAA44829CB5F83ED /* Pods_PillReminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PillReminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 		263277E8293C822E0090B8A2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26EC719929463D4000EC2F19 /* Reminder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				263277EB293C85B60090B8A2 /* SaveReminderController.swift in Sources */,
 				263277D4293C80DF0090B8A2 /* RemindersViewController.swift in Sources */,
 				263277E5293C82110090B8A2 /* TableViewCell.swift in Sources */,
+				26EC719A29463D4000EC2F19 /* Reminder.swift in Sources */,
 				263277D0293C80DF0090B8A2 /* AppDelegate.swift in Sources */,
 				263277D2293C80DF0090B8A2 /* SceneDelegate.swift in Sources */,
 			);

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Reminder: Object {
     @objc dynamic var name: String = ""
