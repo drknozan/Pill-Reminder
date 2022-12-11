@@ -105,7 +105,7 @@ class SaveReminderController: UIViewController {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
         
         // Send notification request
-        let request = UNNotificationRequest(identifier: "ID", content: notificationContent, trigger: trigger)
+        let request = UNNotificationRequest(identifier: name, content: notificationContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { (error : Error?) in
             if let notificationError = error {
                 print(notificationError.localizedDescription)
