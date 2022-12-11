@@ -7,6 +7,7 @@
 
 import RealmSwift
 import UIKit
+import UserNotifications
 
 class RemindersViewController: UIViewController {
 
@@ -101,6 +102,9 @@ extension RemindersViewController: UITableViewDelegate {
             if let reminderToDelete = self.reminders?[indexPath.row] {
                 do {
                     try self.realm.write {
+                        let notificationCenter = UNUserNotificationCenter.current()
+                        notificationCenter.removePendingNotificationRequests(withIdentifiers: [reminderToDelete.name])
+                        notificationCenter.removeDeliveredNotifications(withIdentifiers: [reminderToDelete.name])
                         self.realm.delete(reminderToDelete)
                         self.tableView.reloadData()
                         if self.tableView.numberOfRows(inSection: 0) == 0 {
